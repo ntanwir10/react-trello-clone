@@ -1,3 +1,7 @@
+## NOTE:
+
+### THIS IS A POC TO CREATE TRELLO CLONE USING REACT, REDUX AND MATERIAL-UI and it may contain inspirations from different places.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
