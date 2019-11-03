@@ -23,7 +23,10 @@ const About = () => {
                         3. They can alos create a to-do under a bucket. The user has the flexibility to name this bucket according to his/her choice.
                     </Typography>
                     <Typography component="p" className={classes.para}>
-                        4. All the existing buckets the user has created should be given as options, next time the user tries to create a new bucket.
+                        4. The user can drag and drop a todo item from one board to another.
+                    </Typography>
+                    <Typography component="p" className={classes.para}>
+                        5. All the existing buckets the user has created should be given as options, next time the user tries to create a new bucket.
                     </Typography>
                 </Paper>
             </Container >

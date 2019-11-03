@@ -3,6 +3,7 @@ import {
     BrowserRouter as Router,
     Route,
     Link,
+    Switch,
 } from "react-router-dom";
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -31,22 +32,21 @@ const Navbar = () => {
     const classes = useStyles();
     return (
         <Fragment>
-            <Router>
-                <AppBar position="static" width='100%'>
-                    <Toolbar>
-                        <Typography variant="h6" >
-                            <Link to='/' className={classes.a}> Todo List Application </Link>
-                        </Typography>
-                        <Divider orientation="vertical" className={classes.hr} />
-                        <Link to='../pages/About.js' className={classes.a}>
-                            About
+
+            <AppBar position="static" width='100%'>
+                <Toolbar>
+                    <Typography variant="h6" >
+                        <Link to='/' className={classes.a}> Todo List Application </Link>
+                    </Typography>
+                    <Divider orientation="vertical" className={classes.hr} />
+                    <Link to='/about' className={classes.a}>
+                        About
                         </Link>
-                    </Toolbar>
-                </AppBar>
-                <Route path="/about.js" component={About}>
-                    <About />
-                </Route>
-            </Router>
+                </Toolbar>
+            </AppBar>
+
+
+
         </Fragment>
     );
 }
