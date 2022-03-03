@@ -14,13 +14,13 @@ const About = () => {
                         Features that are implementated in this application.
                     </Typography>
                     <Typography component="p" className={classes.para}>
-                        1. User can create, delete and edit a to-do.
+                        1. User can create, edit and delete a to-do
                     </Typography>
                     <Typography component="p" className={classes.para}>
                         2. They can also be able to mark a to-do done and vice-versa.
                     </Typography>
                     <Typography component="p" className={classes.para}>
-                        3. They can alos create a to-do under a bucket. The user has the flexibility to name this bucket according to his/her choice.
+                        3. They can also create a to-do under a bucket. The user has the flexibility to name this bucket according to his/her choice.
                     </Typography>
                     <Typography component="p" className={classes.para}>
                         4. The user can drag and drop a todo item from one board to another.

@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Thumbnail = styled.div`
   height: 280px;
   width: 280px;
-  background: #90caf9;
+  background: #036aa7;
   padding: 10px;
   margin: 8px;
   display: flex;
@@ -18,7 +18,7 @@ const Thumbnail = styled.div`
 const Title = styled.h4`
   color: white;
   text-decoration: none;
-  text-transform: Uppercase
+  text-transform: Uppercase;
 `;
 
 const BoardThumbnail = ({ title }) => {

@@ -36,7 +36,7 @@ const Navbar = () => {
             <AppBar position="static" width='100%'>
                 <Toolbar>
                     <Typography variant="h6" >
-                        <Link to='/' className={classes.a}> Todo List Application </Link>
+                        <Link to='/' className={classes.a}> Trello Clone </Link>
                     </Typography>
                     <Divider orientation="vertical" className={classes.hr} />
                     <Link to='/about' className={classes.a}>

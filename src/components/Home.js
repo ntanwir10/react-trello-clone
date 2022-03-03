@@ -20,23 +20,25 @@ const HomeContainer = styled.div`
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  background: #0091ea;
+  background: #fafbfc;
 `;
 
-const CreateTitle = styled.h3`
-  font-size: 48px;
+const CreateTitle = styled.p`
+  font-size: 3rem;
   color: white;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
+  color: #036aa7;
+  margin: 30px 0px;
 `;
 
 const CreateInput = styled.input`
   width: 300px;
-  height: 80px;
+  height: 50px;
   font-size: 22px;
   padding: 10px;
   box-sizing: border-box;
-  border-radius: 3px;
+  border-radius: 5px;
   border: none;
   outline-color: blue;
   box-shadow: 0 2px 4px grey;
@@ -44,60 +46,59 @@ const CreateInput = styled.input`
 `;
 
 const Home = ({ boards, boardOrder, dispatch }) => {
-    // this is the home site that shows you your boards and you can also create a Board here.
+  // this is the home site that shows you your boards and you can also create a Board here.
 
-    const [newBoardTitle, setNewBoardTitle] = useState("");
+  const [newBoardTitle, setNewBoardTitle] = useState("");
 
-    const handleChange = e => {
-        setNewBoardTitle(e.target.value);
-    };
+  const handleChange = (e) => {
+    setNewBoardTitle(e.target.value);
+  };
 
-    const handleSubmit = e => {
-        e.preventDefault();
-        dispatch(addBoard(newBoardTitle));
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addBoard(newBoardTitle));
+  };
 
-    const renderCreateBoard = () => {
-        return (
-            <form onSubmit={handleSubmit} style={{ textAlign: "center" }}>
-                <CreateTitle>Create a new Board</CreateTitle>
-                <CreateInput
-                    onChange={handleChange}
-                    value={newBoardTitle}
-                    placeholder="Your boards title..."
-                    type="text"
-                />
-            </form>
-        );
-    };
-    const renderBoards = () => {
-        return boardOrder.map(boardID => {
-            const board = boards[boardID];
-
-            return (
-                <Link
-                    key={boardID}
-                    to={`/${board.id}`}
-                    style={{ textDecoration: "none" }}
-                >
-                    <BoardThumbnail {...board} />
-                </Link>
-            );
-        });
-    };
-
-
+  const renderCreateBoard = () => {
     return (
-        <HomeContainer>
-            <Thumbnails>{renderBoards()}</Thumbnails>
-            {renderCreateBoard()}
-        </HomeContainer>
+      <form onSubmit={handleSubmit} style={{ textAlign: "center" }}>
+        <CreateTitle>Create a new Board</CreateTitle>
+        <CreateInput
+          onChange={handleChange}
+          value={newBoardTitle}
+          placeholder="Your boards title..."
+          type="text"
+        />
+      </form>
     );
+  };
+  const renderBoards = () => {
+    return boardOrder.map((boardID) => {
+      const board = boards[boardID];
+
+      return (
+        <Link
+          key={boardID}
+          to={`/${board.id}`}
+          style={{ textDecoration: "none" }}
+        >
+          <BoardThumbnail {...board} />
+        </Link>
+      );
+    });
+  };
+
+  return (
+    <HomeContainer>
+      <Thumbnails>{renderBoards()}</Thumbnails>
+      {renderCreateBoard()}
+    </HomeContainer>
+  );
 };
 
-const mapStateToProps = state => ({
-    boards: state.boards,
-    boardOrder: state.boardOrder
+const mapStateToProps = (state) => ({
+  boards: state.boards,
+  boardOrder: state.boardOrder,
 });
 
 export default connect(mapStateToProps)(Home);
